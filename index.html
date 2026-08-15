@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>HWARINSKIN-Dasbor</title>
+  <link rel="icon" href="/assets/logo-Bsmseoip.jpg">
+  <!-- Preconnect for faster Google Fonts loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Prevent FOUC - Flash of Unstyled Content */
+    body {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+  </style>
+  <style>
+    /* Base Font Settings */
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #e2e8f0;
+      /* slate-200 */
+      color: #334155;
+      /* slate-700 */
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .brand-font {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Hide number input spinners */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+      -webkit-appearance: textfield;
+              appearance: textfield;
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.3s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* ================= PRINT STYLES ================= */
+    @media print {
+
+      /* 1. Global Reset */
+      @page {
+        margin: 0;
+        size: auto;
+      }
+
+      body {
+        background: white;
+        visibility: hidden;
+        /* Hide everything by default */
+      }
+
+      /* Hide UI Elements */
+      nav,
+      header,
+      aside,
+      .no-print,
+      button,
+      .fixed {
+        display: none !important;
+      }
+
+      /* 2. RECEIPT PRINTING MODE */
+      /* Detect if we are printing a receipt */
+      body:has(#printable-receipt) #printable-receipt {
+        visibility: visible;
+        display: block !important;
+        /* Force show even if class is 'hidden' */
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80mm;
+        /* Thermal paper width */
+        padding: 10px;
+        font-family: 'Courier New', monospace;
+        color: black;
+        background: white;
+        z-index: 9999;
+      }
+
+      body:has(#printable-receipt) #printable-receipt * {
+        visibility: visible;
+      }
+
+      /* 3. REPORT PRINTING MODE */
+      /* If not a receipt, check for report content */
+      body:not(:has(#printable-receipt)) #report-content {
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 20mm;
+        /* A4 Margin */
+      }
+
+      body:not(:has(#printable-receipt)) #report-content * {
+        visibility: visible;
+      }
+
+      /* Show Print Header on Reports */
+      #print-header {
+        display: block !important;
+        margin-bottom: 20px;
+        text-align: center;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+        visibility: visible;
+      }
+
+      /* Ensure Charts Scale */
+      .recharts-wrapper {
+        width: 100% !important;
+      }
+    }
+  </style>
+
+  <script type="module" crossorigin src="/assets/index-BTGzR1zg.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-react-DMFLxkJx.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-icons-CMgklitt.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-firebase-BgnFWnkX.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-Whv5PZav.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    // Prevent FOUC - Flash of Unstyled Content
+    document.addEventListener('DOMContentLoaded', function () {
+      // Wait for fonts to load
+      document.fonts.ready.then(function () {
+        // Add a small delay to ensure all CSS is loaded
+        setTimeout(function () {
+          document.body.classList.add('loaded');
+        }, 100);
+      });
+
+      // Fallback if fonts take too long
+      setTimeout(function () {
+        if (!document.body.classList.contains('loaded')) {
+          document.body.classList.add('loaded');
+        }
+      }, 2000);
+    });
+
+    // Unregister any lingering service workers from old PWA setup
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (var registration of registrations) {
+          registration.unregister();
+          console.log('Old ServiceWorker unregistered:', registration.scope);
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
